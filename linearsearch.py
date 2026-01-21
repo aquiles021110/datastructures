@@ -4,7 +4,7 @@ def linearsearch(a,k):
         if a[i]==k:
             return i
     return -1
-array=[123,40563,3231,2026,314,600,2026]
+array=[123,40563,3231,2026,314,600,2026,123,27,28,3231,1414,23,41]
 key=2026
 print(linearsearch(array,key))
 #Time complexity for linear search is O(n), best case is 1
@@ -27,3 +27,33 @@ print(binarysearch(arraysorted,key))
 #average case O(log(n))
 #space complexity O(log(n))
 #needs sorted data
+
+#smallest element
+
+def small_linearseach(a):
+    s=a[0]
+    for i in range(len(a)):
+        if a[i]<s:
+            s=a[i]
+    return s
+print(small_linearseach(array))
+
+#biggest element
+
+def big_linearsearch(a):
+    s=a[-1]
+    for i in range(len(a)):
+        if a[i]>s:
+            s=a[i]
+    return s
+
+print(big_linearsearch(array))
+
+#occurences
+def linearsearchoccur(a,k):
+    s=0
+    for i in range(len(a)):
+        if a[i]==k:
+            s+=1
+    return s
+print(linearsearchoccur(array,123))
