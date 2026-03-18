@@ -27,6 +27,10 @@ def Search(root,key):
         return Search(root.right_node,key)
     else:
         return -1
+def smallest(root):
+    while root.left_node is not None:
+        root=(root.left_node)
+    return root.data
 n=int(input('Number of elements in tree: '))
 root=None
 for i in range(n):
@@ -39,3 +43,4 @@ if keynode==-1:
     print('Key does not exsist')
 else:
     print(f'Key is {keynode.data}')
+print('Smallest number: ',smallest(root))
