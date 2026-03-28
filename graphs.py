@@ -21,12 +21,15 @@ class graph:
                     queue.append(node)
                     visited[node]=True
         return result
+    def degree(self, node):
+        return len(self.adj[node-1])
 graph=graph(5)
 graph.edge(1,2)
 graph.edge(1,3)
 graph.edge(2,4)
 print(graph.search(0))
-#finds the fastest path in a non-weighted graph:
+print(graph.degree(2))
+#finds the shortest path in a non-weighted graph:
 #-make a list to add all edges . -create a queue . -create a visited list to keep track of visits
 # -when searching, if node is visited disregard, if not, add to queue
 # -move queue to result list until queue empty . -give result/path that gets to all nodes
